@@ -33,7 +33,12 @@ namespace SmartSystemMenu.Utils
             {
                 return "Afx:*";
             }
-            
+
+            if (className.StartsWith("Avalonia-", StringComparison.Ordinal))
+            {
+                return "Avalonia-*";
+            }
+
             var match = HwndWrapperRegex.Match(className);
             if (!match.Success)
                 return className;
